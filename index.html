@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Ensemble Team Builder</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+  <header class="hero">
+    <h1>✨ Ultimate Ensemble Team Builder</h1>
+    <p>จัดทีมอัตโนมัติ • หลายด่าน • หลายทีม • แอดมิน</p>
+  </header>
+
+  <!-- Upload -->
+  <section class="panel">
+    <h2>📁 Upload Excel</h2>
+
+    <input type="file" id="excelFile" accept=".xlsx,.xls">
+  </section>
+
+  <!-- Stage -->
+  <section class="panel">
+
+    <h2>🎮 Select Stage</h2>
+
+    <select id="stageSelect">
+      <option value="beginner">Beginner</option>
+      <option value="normal">Normal</option>
+      <option value="hard" selected>Hard</option>
+      <option value="expert">Expert</option>
+    </select>
+
+  </section>
+
+  <!-- Conditions -->
+  <section class="panel">
+
+    <h2>🎯 Team Condition</h2>
+
+    <div class="grid">
+
+      <div>
+        <label>Active</label>
+        <input type="number" id="targetAC" value="800">
+      </div>
+
+      <div>
+        <label>Smart</label>
+        <input type="number" id="targetSM" value="800">
+      </div>
+
+      <div>
+        <label>Technique</label>
+        <input type="number" id="targetTE" value="800">
+      </div>
+
+      <div>
+        <label>Members</label>
+
+        <select id="maxMembers">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option selected>5</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Show Teams</label>
+
+        <select id="teamCount">
+          <option>3</option>
+          <option selected>5</option>
+          <option>10</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button id="calculateBtn">
+      🚀 Calculate Best Teams
+    </button>
+
+  </section>
+
+  <!-- Admin -->
+  <section class="panel">
+
+    <h2>👑 Admin Panel</h2>
+
+    <div class="grid">
+
+      <input type="password"
+             id="adminPassword"
+             placeholder="Admin Password">
+
+      <button id="loginBtn">
+        Login
+      </button>
+
+    </div>
+
+    <div id="adminArea" style="display:none;">
+
+      <h3>➕ Add Character</h3>
+
+      <div class="grid">
+
+        <input type="text" id="charName" placeholder="Character Name">
+
+        <input type="text" id="outfitName" placeholder="Outfit">
+
+        <input type="number" id="acValue" placeholder="Active">
+
+        <input type="number" id="smValue" placeholder="Smart">
+
+        <input type="number" id="teValue" placeholder="Technique">
+
+        <input type="text" id="imageUrl" placeholder="Image URL">
+
+        <select id="statusValue">
+          <option value="done">done</option>
+          <option value="yes">yes</option>
+        </select>
+
+      </div>
+
+      <button id="addDataBtn">
+        💾 Save Character
+      </button>
+
+    </div>
+
+  </section>
+
+  <section id="results"></section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
